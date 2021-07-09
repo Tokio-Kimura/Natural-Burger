@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Natural Burger</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- --------------------Top-------------------- -->
+    <div id="top_view">
+        <div class="logo-top">
+            <p>Natural<br> Burger</p>
+        </div>
+        <h1>[自然]に、<br class="sp">食べよう。</h1>
+        <ul class="slider">
+            <li class="slider-item slider-item01"></li>
+            <li class="slider-item slider-item02"></li>
+            <li class="slider-item slider-item03"></li>
+        </ul>
+        <div class="scrolldown1"><span>Scroll</span></div>
+    </div>
+
+    <!-- --------------------nav-------------------- -->
+    <div id="header">
+        <div class="logo">
+            <p>Natural<br>Burger</p>
+        </div>
+        <div class="openbtn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span>Menu</span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <nav id="g-nav">
+        <div id="g-nav-list">
+            <!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
+            <ul>
+                <li><a href="#top_view">TOP</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#menu">menu</a></li>
+                <li><a href="#access">access</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="circle-bg"></div>
+
+    <!-- --------------------news-------------------- -->
+    <div id="news_container">
+        <ul class="news_slider">
+            <li><a href="#"><span>2021.4.01</span>オープンしました！</a></li>
+            <li><a href="#"><span>2021.4.05</span>期間限定の商品をご紹介</a></li>
+            <li><a href="#"><span>2021.4.12</span>今週はセットが10％OFF</a></li>
+        </ul>
+    </div>
+
+    <!-- --------------------about-------------------- -->
+    <div id="about">
+        <h1 class="title">-about-</h1>
+        <p><span class="blurTrigger">「ハンバーガーは体に悪い。」</span>
+            <br><span class="blurTrigger">そんなイメージがついてしまったのは</span>
+            <br class="sp"><span class="blurTrigger">いつからでしょうか。</span>
+            <br><span class="blurTrigger">みんなが安心して食べられる食材を使い、</span>
+            <br><span class="blurTrigger">ハンバーガーを自然に楽しめる様にする為に</span>
+            <br class="sp"><span class="blurTrigger">このお店を始めました。</span>
+            <br><span class="blurTrigger">当店のメニューに合成着色料、化学調味料、</span>
+            <br class="sp"><span class="blurTrigger">合成香料、合成保存料などの</span>
+            <br class="sp"><span class="blurTrigger">人工的な添加物は存在しません。</span>
+            <br><span class="blurTrigger">野菜はすべて国産の無農薬、有機肥料。</span>
+            <br><span class="blurTrigger">お肉も国産で成長促進ホルモン剤、</span>
+            <br class="sp"><span class="blurTrigger">抗生物質、ステロイドなどを</span>
+            <br class="sp"><span class="blurTrigger">一切使用していないものだけを使用、</span>
+            <br><span class="blurTrigger">バンズにはオーガニックの</span>
+            <br class="sp"><span class="blurTrigger">国産小麦を100％使用しています。</span>
+            <br><span class="blurTrigger">また、ヴィーガンやマクロビ派の方も</span>
+            <br class="sp"><span class="blurTrigger">安心して食べられるように</span>
+            <br><span class="blurTrigger">植物性100％のハンバーガーもございます。</span>
+            <br><span class="blurTrigger">お肉好きも野菜好きも一緒に</span>
+            <br class="sp"><span class="blurTrigger">安心してハンバーガーを楽しめるお店。</span>
+            <br><span class="blurTrigger">それが「Natural Burger」です。</span>
+        </p>
+    </div>
+    <!-- --------------------menu-------------------- -->
+    <div id="menu">
+        <h1 class="title">-menu-</h1>
+        <div class="fadeInUpTrigger">
+            <ul class="tab">
+                <li class="active"><a href="#burger">BURGER</a></li>
+                <li><a href="#side">SIDE</a></li>
+                <li><a href="#drink">DRINK</a></li>
+            </ul>
+
+            <div id="burger" class="area is-active">
+                <h2>バーガー</h2>
+                <p>※全て無添加です</p>
+                <p>※プラス250円でポテトとドリンク付</p>
+                <ul>
+                    <li>ナチュラル・バーガー</li>
+                    <li>ナチュラル・ダブル</li>
+                    <li>ナチュラル・チーズ</li>
+                    <li>ナチュラル・チーズダブル</li>
+                    <li>ヴィーガン・バーガー</li>
+                    <li>ヴィーガン・ダブル</li>
+                </ul>
+                <!--/area-->
+            </div>
+            <div id="side" class="area">
+                <h2>サイドメニュー</h2>
+                <p>※全て無添加です</p>
+                <ul>
+                    <li>フライドポテト</li>
+                    <li>ベイクドポテト</li>
+                    <li>オニオンリング</li>
+                    <li>有機ベビーリーフのサラダ</li>
+                </ul>
+                <!--/area-->
+            </div>
+            <div id="drink" class="area">
+                <h2>ドリンク</h2>
+                <p>※すべて無添加飲料です</p>
+                <ul>
+                    <li>コーラ</li>
+                    <li>ソーダ</li>
+                    <li>ジンジャーエール</li>
+                    <li>100％オレンジジュース</li>
+                    <li>100％アップルジュース</li>
+                    <li>烏龍茶（Hot/Ice）</li>
+                    <li>アールグレイティー（Hot/Ice）</li>
+                    <li>ダージリンティー（Hot/Ice）</li>
+                    <li>ルイボスティー（Hot/Ice）</li>
+                    <li>コーヒー（Hot/Ice）</li>
+                    <li>カフェインレスコーヒー（Hot/Ice）</li>
+                </ul>
+                <!--/area-->
+            </div>
+        </div>
+    </div>
+    <!-- --------------------access-------------------- -->
+    <div id="access">
+        <h1 class="title">-access-</h1>
+        <div class="jusho">
+            〒123-456 <br class="sp"> 東京都中央区1-2-3 <br>
+            TEL : 00-1234-5678 <br>
+            営業時間： <br class="sp"> 平日9:00〜18:00 <br class="sp"> 土日・祝日10:00〜19:00
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+    <script src="script.js"></script>
+</body></html>

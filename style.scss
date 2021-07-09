@@ -1,0 +1,687 @@
+/*変数*/
+$bg-color:#F4EBDC;
+$a-color:#E6210D;
+$b-color:#268B2A;
+$c-color:#Fb8F04;
+$d-color:#581E11;
+
+body {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    color: $b-color;
+    margin: 0 20px 20px;
+    text-align: center;
+    font-family: 'Chango', cursive;
+}
+
+
+/*--------------------header--------------------*/
+#header {
+    position: fixed;
+    max-width: 1080px;
+    bottom: 0;
+    height: 70px;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $bg-color;
+    color: #fff;
+    text-align: center;
+
+    &.UpMove {
+        animation: UpAnime 0.5s forwards;
+    }
+
+    //.UpMove
+
+    &.DownMove {
+        animation: DownAnime 0.5s forwards;
+    }
+
+    //DownMove
+}
+
+@keyframes UpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(70px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+//UpAnime
+
+@keyframes DownAnime {
+    from {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(70px);
+    }
+}
+
+//DownAnime
+.openbtn {
+    position: relative;
+    z-index: 999;
+    left: auto;
+    margin-right: auto;
+    margin-left: auto;
+    background: #c5E78B;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+
+    & span {
+        display: inline-block;
+        transition: all .4s;
+        position: absolute;
+
+        &:nth-of-type(1),
+        &:nth-of-type(2),
+        &:nth-of-type(3),
+        &:nth-of-type(5),
+        &:nth-of-type(6),
+        &:nth-of-type(7) {
+            height: 2px;
+            width: 62%;
+            left: 10px;
+        }
+
+        &:nth-of-type(1),
+        &:nth-of-type(7) {
+            height: 3px;
+            background: $c-color;
+        }
+
+        &:nth-of-type(2),
+        &:nth-of-type(6) {
+            background: $b-color;
+        }
+
+        &:nth-of-type(1) {
+            top: 13px;
+        }
+
+        &:nth-of-type(2) {
+            top: 16px;
+        }
+
+        &:nth-of-type(3) {
+            top: 18px;
+            background: $a-color;
+        }
+
+        &:nth-of-type(4) {
+            top: 19px;
+            left: 9px;
+            font-size: 0.6em;
+            font-weight: bolder;
+            text-transform: uppercase;
+            color: $d-color;
+        }
+
+        &:nth-of-type(5) {
+            top: 32px;
+            background: #FFE78B;
+        }
+
+        &:nth-of-type(6) {
+            top: 34px;
+        }
+
+        &:nth-of-type(7) {
+            top: 36px;
+        }
+    }
+
+    //span
+    &.active span {
+        &:nth-of-type(1) {
+            top: 18px;
+            left: 18px;
+            transform: translateY(6px) rotate(-45deg);
+            width: 30%;
+        }
+
+        &:nth-of-type(2) {
+            opacity: 0;
+        }
+
+        &:nth-of-type(3) {
+            opacity: 0;
+        }
+
+        &:nth-of-type(4) {
+            opacity: 0;
+        }
+
+        &:nth-of-type(5) {
+            opacity: 0;
+        }
+
+        &:nth-of-type(6) {
+            opacity: 0;
+        }
+
+        &:nth-of-type(7) {
+            top: 30px;
+            left: 18px;
+            transform: translateY(-6px) rotate(45deg);
+            width: 30%;
+        }
+    }
+
+}
+
+//.openbtn
+
+#g-nav.panelactive {
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position: fixed;
+    z-index: 998;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+/*丸の拡大*/
+.circle-bg {
+    position: fixed;
+    z-index: 5;
+    /*丸の形*/
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: $bg-color;
+    /*丸のスタート位置と形状*/
+    transform: scale(0);
+    /*scaleをはじめは0に*/
+    bottom: -50px;
+    left: calc(50% - 50px);
+    /*50%から円の半径を引いた値*/
+    transition: all .6s;
+    /*0.6秒かけてアニメーション*/
+}
+
+.circle-bg.circleactive {
+    transform: scale(50);
+    /*クラスが付与されたらscaleを拡大*/
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav-list {
+    display: none;
+    /*はじめは表示なし*/
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+#g-nav.panelactive #g-nav-list {
+    display: block;
+    /*クラスが付与されたら出現*/
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+    opacity: 0;
+    /*はじめは透過0*/
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*背景が出現後にナビゲーションを表示*/
+#g-nav.panelactive ul {
+    opacity: 1;
+}
+
+/* 背景が出現後にナビゲーション li を表示*/
+#g-nav.panelactive ul li {
+    animation-name: gnaviAnime;
+    animation-duration: 1s;
+    animation-delay: .2s;
+    /*0.2 秒遅らせて出現*/
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes gnaviAnime {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/*リストのレイアウト設定*/
+#g-nav li {
+    text-align: center;
+    list-style: none;
+}
+
+#g-nav li a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+}
+
+/*--------------------Top--------------------*/
+.slider {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+
+    &-item01 {
+        background: url(img/hamburger-top.jpg);
+    }
+
+    &-item02 {
+        background: url(img/yasai-burger.jpg);
+    }
+
+    &-item03 {
+        background: url(img/vegan-burger.jpg);
+    }
+
+    &-item {
+        width: 100%;
+        /*各スライダー全体の横幅を画面の高さいっぱい（100%）にする*/
+        height: 100vh;
+        /*各スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+        background-repeat: no-repeat;
+        /*背景画像をリピートしない*/
+        background-position: center;
+        /*背景画像の位置を中央に*/
+        background-size: cover;
+        /*背景画像が.slider-item全体を覆い表示*/
+    }
+}
+
+.slick {
+
+    &-prev,
+    &-next {
+        position: absolute;
+        /*絶対配置にする*/
+        z-index: 3;
+        top: 42%;
+        cursor: pointer;
+        /*マウスカーソルを指マークに*/
+        outline: none;
+        /*クリックをしたら出てくる枠線を消す*/
+        border-top: 2px solid #ccc;
+        /*矢印の色*/
+        border-right: 2px solid #ccc;
+        /*矢印の色*/
+        height: 25px;
+        width: 25px;
+    }
+
+    &-prev {
+        left: 2.5%;
+        transform: rotate(-135deg);
+    }
+
+    &-next {
+        right: 2.5%;
+        transform: rotate(45deg);
+    }
+
+    &-dots {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+        margin: -50px 0 0 0;
+
+        & li {
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        & button {
+            color: transparent;
+            outline: none;
+            width: 8px;
+            /*ドットボタンのサイズ*/
+            height: 8px;
+            /*ドットボタンのサイズ*/
+            display: block;
+            border-radius: 50%;
+            background: #ccc;
+            /*ドットボタンの色*/
+        }
+    }
+
+    &-dots &-active button {
+        background: #333;
+    }
+}
+
+#top_view {
+    position: relative;
+
+    & h1 {
+        width: 320px;
+        position: absolute;
+        font-family: 'kosugi Maru', sans-serif;
+        color: whitesmoke;
+        z-index: 2;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 3em;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-shadow:
+            1px 0 0 gray,
+            0 1px 0 gray,
+            -1px 0 0 gray,
+            0 -1px 0 gray;
+    }
+}
+
+.scrolldown1 {
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    bottom: 50px;
+    height: 60px;
+
+    & span {
+        position: absolute;
+        left: -19px;
+        top: -15px;
+        color: #eee;
+        font-size: 0.8em;
+        font-weight: bold;
+        letter-spacing: 0.05em;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 2px;
+        height: 30px;
+        background: #eee;
+        animation: pathmove 1.4s ease-in-out infinite;
+        opacity: 0;
+    }
+}
+
+@keyframes pathmove {
+    0% {
+        height: 0;
+        top: 0;
+        opacity: 0;
+    }
+
+    30% {
+        height: 30px;
+        opacity: 1;
+    }
+
+    100% {
+        height: 0;
+        top: 50px;
+        opacity: 0;
+    }
+}
+
+/*--------------------news--------------------*/
+.news_slider {
+    & a {
+        display: block;
+        background: #fff;
+        color: #333;
+        text-decoration: none;
+        padding: 20px;
+    }
+
+    & span {
+        display: inline-block;
+        font-size: 0.8rem;
+        margin-right: 10px;
+        color: #777;
+    }
+}
+
+/*--------------------About--------------------*/
+#about {
+    height: auto;
+    font-family: 'kosugi Maru', sans-serif;
+    font-size: 0.97em;
+    color: $b-color;
+    line-height: 2.3em;
+    background: linear-gradient(to top, transparent 0%, transparent 80%, #fff 100%),
+        linear-gradient(to bottom, transparent 0%, transparent 75%, #fff 100%), url(img/genzairyou.jpg);
+    background-repeat: no-repeat;
+    /*背景画像をリピートしない*/
+    background-position: bottom;
+    background-size: cover;
+    text-shadow:
+        1px 0 0 $bg-color,
+        0 1px 0 $bg-color,
+        -1px 0 0 $bg-color,
+        0 -1px 0 $bg-color;
+
+    & p {
+        text-align: right;
+        margin: 10px 0 0 5px;
+    }
+}
+
+.blur {
+    animation-name: blurAnime;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes blurAnime {
+    from {
+        filter: blur(10px);
+        transform: scale(1.02);
+        opacity: 0;
+    }
+
+    to {
+        filter: blur(0);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.blurTrigger {
+    opacity: 0;
+}
+
+
+/*--------------------Menu--------------------*/
+
+.fadeUp {
+    animation-name: fadeUpAnime;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*tabの形状*/
+.tab {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tab li a {
+    display: block;
+    background: #ddd;
+    margin: 0 2px;
+    padding: 10px 20px;
+    border-radius: 10px 10px 0 0;
+
+}
+
+/*liにactiveクラスがついた時の形状*/
+.tab li.active a {
+    background: $bg-color;
+}
+
+
+/*エリアの表示非表示と形状*/
+.area {
+    display: none;
+    /*はじめは非表示*/
+    opacity: 0;
+    /*透過0*/
+    background: $bg-color;
+    padding: 50px 20px;
+    font-family: 'kosugi Maru', sans-serif;
+}
+
+/*areaにis-activeというクラスがついた時の形状*/
+.area.is-active {
+    display: block;
+    /*表示*/
+    animation-name: displayAnime;
+    /*ふわっと表示させるためのアニメーション*/
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes displayAnime {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+#menu {
+    width: 100%;
+    max-width: 1080px;
+    min-height: 700px;
+    margin: 30px auto;
+    background: #fefefe;
+}
+
+.area h2 {
+    font-size: 1.3rem;
+    margin: 0 0 20px 10px;
+}
+
+.area li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/*--------------------Logo--------------------*/
+.logo {
+    position: absolute;
+    left: 10px;
+    color: $b-color;
+    font-size: 1.4em;
+    line-height: 0.8em;
+    font-family: 'Chango', cursive;
+
+    &-top {
+        position: absolute;
+        z-index: 2;
+        right: 10px;
+        font-size: 1.7em;
+        line-height: 0.8em;
+        text-align: center;
+        font-family: 'Chango', cursive;
+        color: $bg-color;
+        text-shadow:
+            1px 0 0 gray,
+            0 1px 0 gray,
+            -1px 0 0 gray,
+            0 -1px 0 gray;
+    }
+}
+
+.fadeInUpTrigger {
+    opacity: 0;
+}
+
+.jusho {
+    margin: 80px auto;
+    width: 80%;
+    font-family: 'kosugi Maru', sans-serif;
+    font-size: 1.3em;
+
+    line-height: 2em;
+}
+
+/*--------------------レスポンシブ--------------------*/
+
+@media screen and (min-width:800px) {
+    .sp {
+        display: none;
+    }
+
+    #top_view h1 {
+        width: 800px;
+    }
+}

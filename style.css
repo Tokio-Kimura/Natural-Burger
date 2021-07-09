@@ -1,0 +1,574 @@
+@charset "UTF-8";
+/*変数*/
+/* line 8, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+body {
+  max-width: 1080px;
+  margin: 0 auto; }
+
+/* line 13, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+* {
+  margin: 0;
+  padding: 0; }
+
+/* line 18, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.title {
+  color: #268B2A;
+  margin: 0 20px 20px;
+  text-align: center;
+  font-family: 'Chango', cursive; }
+
+/*--------------------header--------------------*/
+/* line 27, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+#header {
+  position: fixed;
+  max-width: 1080px;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #F4EBDC;
+  color: #fff;
+  text-align: center; }
+  /* line 41, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  #header.UpMove {
+    animation: UpAnime 0.5s forwards; }
+  /* line 47, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  #header.DownMove {
+    animation: DownAnime 0.5s forwards; }
+
+@keyframes UpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(70px); }
+  to {
+    opacity: 1;
+    transform: translateY(0); } }
+
+@keyframes DownAnime {
+  from {
+    opacity: 1;
+    transform: translateY(0px); }
+  to {
+    opacity: 0;
+    transform: translateY(70px); } }
+
+/* line 81, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.openbtn {
+  position: relative;
+  z-index: 999;
+  left: auto;
+  margin-right: auto;
+  margin-left: auto;
+  background: #c5E78B;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 15px; }
+  /* line 93, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  .openbtn span {
+    display: inline-block;
+    transition: all .4s;
+    position: absolute; }
+    /* line 98, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+    .openbtn span:nth-of-type(1), .openbtn span:nth-of-type(2), .openbtn span:nth-of-type(3), .openbtn span:nth-of-type(5), .openbtn span:nth-of-type(6), .openbtn span:nth-of-type(7) {
+      height: 2px;
+      width: 62%;
+      left: 10px; }
+    /* line 109, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+    .openbtn span:nth-of-type(1), .openbtn span:nth-of-type(7) {
+      height: 3px;
+      background: #Fb8F04; }
+    /* line 115, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+    .openbtn span:nth-of-type(2), .openbtn span:nth-of-type(6) {
+      background: #268B2A; }
+    /* line 120, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+    .openbtn span:nth-of-type(1) {
+      top: 13px; }
+    /* line 124, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+    .openbtn span:nth-of-type(2) {
+      top: 16px; }
+    /* line 128, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+    .openbtn span:nth-of-type(3) {
+      top: 18px;
+      background: #E6210D; }
+    /* line 133, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+    .openbtn span:nth-of-type(4) {
+      top: 19px;
+      left: 9px;
+      font-size: 0.6em;
+      font-weight: bolder;
+      text-transform: uppercase;
+      color: #581E11; }
+    /* line 142, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+    .openbtn span:nth-of-type(5) {
+      top: 32px;
+      background: #FFE78B; }
+    /* line 147, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+    .openbtn span:nth-of-type(6) {
+      top: 34px; }
+    /* line 151, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+    .openbtn span:nth-of-type(7) {
+      top: 36px; }
+  /* line 158, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  .openbtn.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%; }
+  /* line 165, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  .openbtn.active span:nth-of-type(2) {
+    opacity: 0; }
+  /* line 169, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  .openbtn.active span:nth-of-type(3) {
+    opacity: 0; }
+  /* line 173, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  .openbtn.active span:nth-of-type(4) {
+    opacity: 0; }
+  /* line 177, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  .openbtn.active span:nth-of-type(5) {
+    opacity: 0; }
+  /* line 181, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  .openbtn.active span:nth-of-type(6) {
+    opacity: 0; }
+  /* line 185, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  .openbtn.active span:nth-of-type(7) {
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%; }
+
+/* line 197, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+#g-nav.panelactive {
+  /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+  position: fixed;
+  z-index: 998;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  max-width: 1080px;
+  margin: 0 auto; }
+
+/*丸の拡大*/
+/* line 209, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.circle-bg {
+  position: fixed;
+  z-index: 5;
+  /*丸の形*/
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #F4EBDC;
+  /*丸のスタート位置と形状*/
+  transform: scale(0);
+  /*scaleをはじめは0に*/
+  bottom: -50px;
+  left: calc(50% - 50px);
+  /*50%から円の半径を引いた値*/
+  transition: all .6s;
+  /*0.6秒かけてアニメーション*/ }
+
+/* line 227, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.circle-bg.circleactive {
+  transform: scale(50);
+  /*クラスが付与されたらscaleを拡大*/ }
+
+/*ナビゲーションの縦スクロール*/
+/* line 233, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+#g-nav-list {
+  display: none;
+  /*はじめは表示なし*/
+  /*ナビの数が増えた場合縦スクロール*/
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 1080px;
+  margin: 0 auto; }
+
+/* line 247, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+#g-nav.panelactive #g-nav-list {
+  display: block;
+  /*クラスが付与されたら出現*/ }
+
+/*ナビゲーション*/
+/* line 253, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+#g-nav ul {
+  opacity: 0;
+  /*はじめは透過0*/
+  /*ナビゲーション天地中央揃え*/
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+/*背景が出現後にナビゲーションを表示*/
+/* line 265, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+#g-nav.panelactive ul {
+  opacity: 1; }
+
+/* 背景が出現後にナビゲーション li を表示*/
+/* line 270, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+#g-nav.panelactive ul li {
+  animation-name: gnaviAnime;
+  animation-duration: 1s;
+  animation-delay: .2s;
+  /*0.2 秒遅らせて出現*/
+  animation-fill-mode: forwards;
+  opacity: 0; }
+
+@keyframes gnaviAnime {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+/*リストのレイアウト設定*/
+/* line 291, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+#g-nav li {
+  text-align: center;
+  list-style: none; }
+
+/* line 296, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+#g-nav li a {
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold; }
+
+/*--------------------Top--------------------*/
+/* line 307, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.slider {
+  position: relative;
+  z-index: 1;
+  height: 100vh; }
+  /* line 312, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  .slider-item01 {
+    background: url(img/hamburger-top.jpg); }
+  /* line 316, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  .slider-item02 {
+    background: url(img/yasai-burger.jpg); }
+  /* line 320, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  .slider-item03 {
+    background: url(img/vegan-burger.jpg); }
+  /* line 324, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  .slider-item {
+    width: 100%;
+    /*各スライダー全体の横幅を画面の高さいっぱい（100%）にする*/
+    height: 100vh;
+    /*各スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+    background-repeat: no-repeat;
+    /*背景画像をリピートしない*/
+    background-position: center;
+    /*背景画像の位置を中央に*/
+    background-size: cover;
+    /*背景画像が.slider-item全体を覆い表示*/ }
+
+/* line 340, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.slick-prev, .slick-next {
+  position: absolute;
+  /*絶対配置にする*/
+  z-index: 3;
+  top: 42%;
+  cursor: pointer;
+  /*マウスカーソルを指マークに*/
+  outline: none;
+  /*クリックをしたら出てくる枠線を消す*/
+  border-top: 2px solid #ccc;
+  /*矢印の色*/
+  border-right: 2px solid #ccc;
+  /*矢印の色*/
+  height: 25px;
+  width: 25px; }
+
+/* line 358, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.slick-prev {
+  left: 2.5%;
+  transform: rotate(-135deg); }
+
+/* line 363, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.slick-next {
+  right: 2.5%;
+  transform: rotate(45deg); }
+
+/* line 368, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.slick-dots {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  margin: -50px 0 0 0; }
+  /* line 374, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  .slick-dots li {
+    display: inline-block;
+    margin: 0 5px; }
+  /* line 379, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  .slick-dots button {
+    color: transparent;
+    outline: none;
+    width: 8px;
+    /*ドットボタンのサイズ*/
+    height: 8px;
+    /*ドットボタンのサイズ*/
+    display: block;
+    border-radius: 50%;
+    background: #ccc;
+    /*ドットボタンの色*/ }
+
+/* line 393, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.slick-dots .slick-active button {
+  background: #333; }
+
+/* line 398, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+#top_view {
+  position: relative; }
+  /* line 401, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  #top_view h1 {
+    width: 320px;
+    position: absolute;
+    font-family: 'kosugi Maru', sans-serif;
+    color: whitesmoke;
+    z-index: 2;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 3em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-shadow: 1px 0 0 gray, 0 1px 0 gray, -1px 0 0 gray, 0 -1px 0 gray; }
+
+/* line 422, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.scrolldown1 {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  bottom: 50px;
+  height: 60px; }
+  /* line 429, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  .scrolldown1 span {
+    position: absolute;
+    left: -19px;
+    top: -15px;
+    color: #eee;
+    font-size: 0.8em;
+    font-weight: bold;
+    letter-spacing: 0.05em; }
+  /* line 439, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  .scrolldown1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 30px;
+    background: #eee;
+    animation: pathmove 1.4s ease-in-out infinite;
+    opacity: 0; }
+
+@keyframes pathmove {
+  0% {
+    height: 0;
+    top: 0;
+    opacity: 0; }
+  30% {
+    height: 30px;
+    opacity: 1; }
+  100% {
+    height: 0;
+    top: 50px;
+    opacity: 0; } }
+
+/*--------------------news--------------------*/
+/* line 472, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.news_slider a {
+  display: block;
+  background: #fff;
+  color: #333;
+  text-decoration: none;
+  padding: 20px; }
+
+/* line 480, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.news_slider span {
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-right: 10px;
+  color: #777; }
+
+/*--------------------About--------------------*/
+/* line 489, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+#about {
+  height: auto;
+  font-family: 'kosugi Maru', sans-serif;
+  font-size: 0.97em;
+  color: #268B2A;
+  line-height: 2.3em;
+  background: linear-gradient(to top, transparent 0%, transparent 80%, #fff 100%), linear-gradient(to bottom, transparent 0%, transparent 75%, #fff 100%), url(img/genzairyou.jpg);
+  background-repeat: no-repeat;
+  /*背景画像をリピートしない*/
+  background-position: bottom;
+  background-size: cover;
+  text-shadow: 1px 0 0 #F4EBDC, 0 1px 0 #F4EBDC, -1px 0 0 #F4EBDC, 0 -1px 0 #F4EBDC; }
+  /* line 507, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  #about p {
+    text-align: right;
+    margin: 10px 0 0 5px; }
+
+/* line 513, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.blur {
+  animation-name: blurAnime;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards; }
+
+@keyframes blurAnime {
+  from {
+    filter: blur(10px);
+    transform: scale(1.02);
+    opacity: 0; }
+  to {
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1; } }
+
+/* line 533, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.blurTrigger {
+  opacity: 0; }
+
+/*--------------------Menu--------------------*/
+/* line 540, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.fadeUp {
+  animation-name: fadeUpAnime;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0; }
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100px); }
+  to {
+    opacity: 1;
+    transform: translateY(0); } }
+
+/*tabの形状*/
+/* line 560, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.tab {
+  display: flex;
+  flex-wrap: wrap; }
+
+/* line 565, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.tab li a {
+  display: block;
+  background: #ddd;
+  margin: 0 2px;
+  padding: 10px 20px;
+  border-radius: 10px 10px 0 0; }
+
+/*liにactiveクラスがついた時の形状*/
+/* line 575, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.tab li.active a {
+  background: #F4EBDC; }
+
+/*エリアの表示非表示と形状*/
+/* line 581, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.area {
+  display: none;
+  /*はじめは非表示*/
+  opacity: 0;
+  /*透過0*/
+  background: #F4EBDC;
+  padding: 50px 20px;
+  font-family: 'kosugi Maru', sans-serif; }
+
+/*areaにis-activeというクラスがついた時の形状*/
+/* line 592, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.area.is-active {
+  display: block;
+  /*表示*/
+  animation-name: displayAnime;
+  /*ふわっと表示させるためのアニメーション*/
+  animation-duration: 2s;
+  animation-fill-mode: forwards; }
+
+@keyframes displayAnime {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+/* line 611, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+ul {
+  list-style: none; }
+
+/* line 615, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+a {
+  color: #333;
+  text-decoration: none; }
+
+/* line 620, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+#menu {
+  width: 100%;
+  max-width: 1080px;
+  min-height: 700px;
+  margin: 30px auto;
+  background: #fefefe; }
+
+/* line 628, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.area h2 {
+  font-size: 1.3rem;
+  margin: 0 0 20px 10px; }
+
+/* line 633, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.area li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd; }
+
+/*--------------------Logo--------------------*/
+/* line 639, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.logo {
+  position: absolute;
+  left: 10px;
+  color: #268B2A;
+  font-size: 1.4em;
+  line-height: 0.8em;
+  font-family: 'Chango', cursive; }
+  /* line 647, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  .logo-top {
+    position: absolute;
+    z-index: 2;
+    right: 10px;
+    font-size: 1.7em;
+    line-height: 0.8em;
+    text-align: center;
+    font-family: 'Chango', cursive;
+    color: #F4EBDC;
+    text-shadow: 1px 0 0 gray, 0 1px 0 gray, -1px 0 0 gray, 0 -1px 0 gray; }
+
+/* line 664, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.fadeInUpTrigger {
+  opacity: 0; }
+
+/* line 668, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+.jusho {
+  margin: 80px auto;
+  width: 80%;
+  font-family: 'kosugi Maru', sans-serif;
+  font-size: 1.3em;
+  line-height: 2em; }
+
+/*--------------------レスポンシブ--------------------*/
+@media screen and (min-width: 800px) {
+  /* line 680, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  .sp {
+    display: none; }
+  /* line 684, /Users/tokio/Desktop/ 作品集/Natural Burger/style.scss */
+  #top_view h1 {
+    width: 800px; } }
+
+/*# sourceMappingURL=style.css.map */
